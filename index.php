@@ -6,15 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Style Css -->
+    <link href="assets/css/style.css" rel="stylesheet">
     
     <title>PHP Dischi Json</title>
 </head>
 <body>
 
     <div id="app">
-        <p v-for="(elem, index) in this.data">
+        <!-- <p v-for="(elem, index) in this.data">
             {{ elem.title}}
-        </p>
+        </p> -->
+
+        <!-- HEADER -->
+        <header>
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-1">
+                        
+                        <img class="w-50" src="assets/img/Spotify-PNG-Logo.png" alt="logo spotify">
+                    </div>
+                </div>
+            </div>
+        </header>
     </div>
     
     <!-- Vue -->
