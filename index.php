@@ -12,7 +12,9 @@
 <body>
 
     <div id="app">
-        <h1>ciao</h1>
+        <p v-for="(elem, index) in this.data">
+            {{ elem.title}}
+        </p>
     </div>
     
     <!-- Vue -->
