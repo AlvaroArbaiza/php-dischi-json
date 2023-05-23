@@ -9,15 +9,15 @@
 
     <!-- Style Css -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <title>PHP Dischi Json</title>
 </head>
 <body>
 
     <div id="app">
-        <!-- <p v-for="(elem, index) in this.data">
-            {{ elem.title}}
-        </p> -->
 
         <!-- HEADER -->
         <header>
@@ -25,6 +25,7 @@
                 <div class="row py-3">
                     <div class="col-1">
                         
+                        <!-- img -->
                         <img class="w-50" src="assets/img/Spotify-PNG-Logo.png" alt="logo spotify">
                     </div>
                 </div>
@@ -33,24 +34,68 @@
 
         <!-- MAIN -->
         <main>
+            <div class="container">
+                <div class="row justify-content-around py-5 px-5">
 
-        <div class="container">
-            <div class="row justify-content-around py-5 px-5">
+                    <!-- cards -->
+                    <div class="card pt-4 px-5" v-for="(elem, index) in this.data" :key="index">
 
-            <!-- cards -->
-                <div class="card pt-4 px-5" v-for="(elem, index) in this.data" :key="index">
+                        <!-- poster -->
+                        <div class="poster">
 
-                    <img :src="elem.poster" class="card-img-top" :alt="elem.author">
+                            <!-- img -->
+                            <img :src="elem.poster" class="card-img-top" :alt="elem.author">
 
-                    <div class="card-body text-white text-center">
-                        <h5 class="card-title">{{ elem.title }}</h5>
-                        <h6>{{ elem.author }}</h6>
-                        <span>{{ elem.year }}</span>
+                            <!-- button -->
+                            <a @click="this.infoCard(index)" href="#" class="text-white d-flex align-items-center justify-content-center text-decoration-none">
+                                <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+
+                        <!-- card-body -->
+                        <div class="card-body text-white text-center">
+
+                            <!-- title -->
+                            <h5 class="card-title">{{ elem.title }}</h5>
+
+                            <!-- author -->
+                            <h6>{{ elem.author }}</h6>
+
+                            <!-- year -->
+                            <span>{{ elem.year }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal card info on clik -->
+                <div v-if="this.cardInfo" class="cardInfo d-flex align-items-center justify-content-center">
+
+                    <!-- card -->
+                    <div class="card pt-4 px-5" style="width: 30rem;">
+
+                        <!-- close button -->
+                        <div class="close text-white">
+                            <i @click="closeInfo" class="fa-solid fa-xmark"></i>
+                        </div>
+
+                        <!-- img -->
+                        <img :src="this.data[indexInfo].poster" class="card-img-top" :alt="this.data[indexInfo].author">
+
+                        <!-- card-body -->
+                        <div class="card-body text-white text-center">
+
+                            <!-- title -->
+                            <h5 class="card-title">{{ this.data[indexInfo].title }}</h5>
+
+                            <!-- author -->
+                            <h6>{{ this.data[indexInfo].author }}</h6>
+
+                            <!-- year -->
+                            <span>{{ this.data[indexInfo].year }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
         </main>
     </div>
     
