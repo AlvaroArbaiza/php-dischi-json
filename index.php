@@ -35,14 +35,14 @@
         <main>
 
         <div class="container">
-            <div class="row justify-content-around">
+            <div class="row justify-content-around py-5 px-5">
 
             <!-- cards -->
-                <div class="card" style="width: 18rem;" v-for="(elem, index) in this.data" :key="index">
+                <div class="card pt-4 px-5" v-for="(elem, index) in this.data" :key="index">
 
                     <img :src="elem.poster" class="card-img-top" :alt="elem.author">
 
-                    <div class="card-body">
+                    <div class="card-body text-white text-center">
                         <h5 class="card-title">{{ elem.title }}</h5>
                         <h6>{{ elem.author }}</h6>
                         <span>{{ elem.year }}</span>

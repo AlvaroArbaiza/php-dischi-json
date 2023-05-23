@@ -1,9 +1,27 @@
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* HEADER */
 header {
     width: 100%;
     background-color: #06131f;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+/* MAIN */
+main {
+    width: 100%;
+    background-color: #1d2d3c;
+}
+
+/* row */
+main .row {
+    row-gap: 5rem;
+}
+
+/* cards */
+main .row .card {
+    width: calc(100% / 3 - 5rem);
+    background-color: #112030;
 }
